@@ -1,0 +1,16 @@
+begin
+
+alter table zb RENAME TO tempxxx_1
+
+create table zb(rkdh char(15) ,gbdh char(15) ,cph nchar(9) )
+
+INSERT INTO zb(rkdh,gbdh,cph,) select rkdh,gbdh,cph FROM tempxxx_1
+
+drop table tempXXX_1
+
+commit
+
+['id', 'brand','name', 'year',  'cpu_rank', 'cpu','ram', 'disk', ,'is_rtx','gpu', 'gpu_memory', 'price', 'disk_detail', 'weight', 'weight_type', 'battery', 'battery_life', 'screen_size', 'has_camere','keyboard_haslight', 'keyboard', 'video_type', 'thin_type', 'business_type', 'game_type', 'is_apple','description', 'link', 'img_src']
+
+create table laptop (id int(8), brand, name text, year ,cpu_rank int(8),cpu,ram int(8),disk,is_rtx,gpu,gpu_memory int(8),price int(8),disk_detail,weight,weight_type,battery,battery_life,screen_size float,has_camere,keyboard_haslight,keyboard,description,video_type,thin_type,business_type,game_type,is_apple,link,img_src)
+INSERT INTO laptop(id , brand, name , year ,cpu_rank ,cpu,ram ,disk,is_rtx,gpu,gpu_memory ,price ,disk_detail,weight,weight_type,battery,battery_life,screen_size ,has_camere,keyboard_haslight,keyboard,description,video_type,thin_type,business_type,game_type,is_apple,link,img_src) select id , brand, name text, year ,cpu_rank ,cpu,ram ,disk,is_rtx,gpu,gpu_memory ,price ,disk_detail,weight,weight_type,battery,battery_life,screen_size float,has_camere,keyboard_haslight,keyboard,description,video_type,thin_type,business_type,game_type,is_apple,link,img_src FROM oldtable
